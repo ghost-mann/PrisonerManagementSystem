@@ -1,74 +1,63 @@
-import javafx.scene.layout.Pane;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class AdminLogin {
 
-    JButton LoginUser, Cancel;
-    JTextField tfUsername;
-    JPasswordField pfPassword;
-    JLabel lblUsername, lblPassword;
-    GridBagLayout gbl;
-    GridBagConstraints gbc;
-
-    public AdminLogin() {
-        tfUsername = new JTextField(20);
-        pfPassword = new JPasswordField(20);
-
-
-        lblUsername = new JLabel("Username");
-        lblPassword = new JLabel("Password");
-
-        gbl = new GridBagLayout();
-        gbc = new GridBagConstraints();
-
-        JFrame frame = new JFrame();
-        frame.setLayout(gbl);
-
-        LoginUser = new JButton("Login");
-        Cancel = new JButton("Cancel");
-
-
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 1;
-        gbc.gridheight = 1;
-        frame.add(lblUsername, gbc);
-
-        gbc.gridx = 1;
-        gbc.gridwidth = 5;
-        gbc.weightx=1;
-        frame.add(tfUsername, gbc);
-
-        gbc.gridy = 1;
-        gbc.gridx = 0;
-        gbc.gridwidth = 1;
-        frame.add(lblPassword, gbc);
-
-        gbc.gridx = 1;
-        gbc.gridwidth = 5;
-        frame.add(pfPassword, gbc);
-
-        frame.add(LoginUser);
-
-        frame.add(Cancel);
-
-        frame.pack();
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout(FlowLayout.TRAILING));
-        frame.setVisible(true);
-
-
-
-
-    }
-
 
     public static void main(String[] args){
 
-        AdminLogin login = new AdminLogin();
-    }
+            JFrame admframe = new JFrame("Login as Administrator");
 
+
+
+
+
+
+            JPanel admpanel = new JPanel();
+
+
+
+
+            JLabel admlabel = new JLabel("Enter your details:");
+
+
+            JLabel username = new JLabel("Username");
+
+
+
+        // textfield of 16 columns
+            JTextField user = new JTextField(16);
+
+
+
+            JLabel password = new JLabel("Password");
+
+
+
+        JTextField pass = new JTextField(16);
+            pass.setBounds(50, 100, 200, 30);
+
+
+            JButton admLogin = new JButton("Login");
+            JButton admCancel = new JButton("Cancel");
+
+
+            admframe.setVisible(true);
+            admframe.add(admpanel, BorderLayout.CENTER);
+            admframe.setBounds(40, 80, 400, 400);
+
+            admpanel.setVisible(true);
+            admpanel.add(admlabel);
+            admpanel.add(username);
+            admpanel.add(user);
+            admpanel.add(password);
+            admpanel.add(pass);
+            admpanel.add(admLogin);
+            admpanel.add(admCancel);
+
+
+
+
+
+    }
 }
